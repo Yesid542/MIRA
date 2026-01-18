@@ -1,0 +1,149 @@
+.footer {
+  background-color: #0a0f1d;
+  padding: 80px 5% 30px 5%;
+  color: #94a3b8;
+  border-top: 1px solid #1e293b;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.5fr; /* Escritorio: 4 columnas */
+  gap: 40px;
+}
+
+.footer-logo {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-dot {
+  width: 12px;
+  height: 12px;
+  background-color: #4ade80;
+  border-radius: 50%;
+}
+
+.footer-column h4 {
+  color: white;
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+.footer-column ul li a {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #4ade80;
+}
+
+.whatsapp-link {
+  color: #4ade80;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sena-logo-placeholder {
+  border: 1px dashed #334155;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.sena-logo-placeholder strong {
+  color: white;
+  display: block;
+  margin-top: 5px;
+}
+
+.location-tag {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* Barra inferior */
+.footer-bottom {
+  max-width: 1200px;
+  margin: 60px auto 0 auto;
+  padding-top: 30px;
+  border-top: 1px solid #1e293b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.footer-legal {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-legal a {
+  color: #475569;
+  text-decoration: none;
+}
+
+/* 📱 Responsivo */
+
+/* Tablets → 2 columnas */
+@media (max-width: 1024px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+/* Móviles → 1 columna */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-legal {
+    margin-top: 0.5rem;
+  }
+}
+
+/* Extra pequeño (≤480px) */
+@media (max-width: 480px) {
+  .footer {
+    font-size: 0.85rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .footer-logo {
+    font-size: 1.2rem;
+  }
+
+  .social-links a {
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+  }
+}

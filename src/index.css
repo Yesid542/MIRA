@@ -1,0 +1,51 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+
+  
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Estilo general de la scrollbar */
+::-webkit-scrollbar {
+  width: 3px;              /* ancho de la barra vertical */
+  height: 10px;             /* alto de la barra horizontal */
+  
+}
+
+/* Fondo de la scrollbar */
+::-webkit-scrollbar-track {
+  background: #222;          /* color del track */
+}
+
+/* Indicador (thumb) */
+::-webkit-scrollbar-thumb {
+  background: #555;          /* color del thumb */
+  border-radius: 5px;        /* esquinas redondeadas */
+}
+
+/* Hover sobre el thumb */
+::-webkit-scrollbar-thumb:hover {
+  width: 7px;
+  background: #f1f5f1;          /* color más oscuro al pasar el mouse */
+} 
+
+/* Scrollbar oculto */
+/* Scrollbar oculto */
+body.hide-scrollbar::-webkit-scrollbar {
+  opacity: 0;
+}
+
+/* Firefox */
+

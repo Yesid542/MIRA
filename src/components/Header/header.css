@@ -1,0 +1,204 @@
+html, body{
+    padding: 0;
+    margin: 0;
+    font-size: 17px;
+}
+.head{
+    display: flex;
+    width: 200vw;
+    color: rgb(250, 248, 248);
+    height: 13vh;
+    background: transparent;
+    position: fixed;
+    transition: background-color 0.5s ease, backdrop-filter 0.5s ease;
+    top: 0;
+    z-index: 9999;
+
+}
+.head.scrolled{
+  background-color: #1e293b;
+}
+.logo{
+        
+    width: 15vw;
+    position: absolute;
+}
+.log{
+    margin-left: -15vw;
+    font-size: 40px;
+    margin-top: 15px;
+    position: absolute;
+    margin-left: 5vw;
+}
+
+nav{
+    
+    margin-left:20vw;
+    width: 60vw;
+}
+
+nav li, a{
+    margin-left: 20px;
+    list-style: none;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}    
+
+.nav-son{
+    display: flex;
+    margin-top: 35px;
+}
+
+.navegar:hover{
+    color: #4ade80;
+    transform: scale(1.1); /* El ícono crece sutilmente */
+}
+    
+
+.nav-actions-right{
+    width: 15vw;
+  display: flex;
+  align-items: center;
+  margin-left: 80vw;
+  position: absolute;
+  margin-top: -7vh;
+}
+
+.btn-login-minimal {
+  /* Estructura base */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: transparent;
+  color: #f8fafc; /* Blanco suave */
+  border: 1px solid #334155; /* Gris pizarra oscuro */
+  padding: 8px 18px;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif; /* O la fuente que elegiste */
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.icon-user {
+  color: #4ade80; /* Tu verde marca para el toque de color */
+  transition: transform 0.3s ease;
+}
+
+/* EFECTOS HOVER */
+.btn-login-minimal:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-color: #4ade80; /* El borde se ilumina en verde */
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(74, 222, 128, 0.15); /* Brillo suave */
+}
+
+.btn-login-minimal:hover .icon-user {
+  transform: scale(1.1); /* El ícono crece sutilmente */
+}
+
+/* Efecto activo (cuando se hace clic) */
+.btn-login-minimal:active {
+  transform: scale(0.96);
+}
+
+.ayuda{
+    margin-right: 30px;
+    font-size: 25px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+.ayuda:hover{
+    
+    color: #4ade80  ;
+    transform: scale(1.1); /* El ícono crece sutilmente */
+    
+}
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+}
+
+
+@media (max-width: 768px) {
+
+  .head{
+    width: 100%;
+    margin-left: -0vw;
+  }
+  .logo{
+    position: absolute;
+    margin-left: 5vw;
+  }
+
+  .ayuda{
+    position: absolute;
+    width: 1vh;
+    height: 1vh;
+    margin-left: 20vw;
+    margin-top: 3vh;
+
+    
+  }
+
+  .responsivo{
+
+    width: 100vw;
+    height: 30vh;
+    margin-top:12.5vh;
+    background-color: #334155;
+
+  }
+
+
+  .nav-son {
+    flex-direction: column; /* menú vertical */
+    gap: 10px;
+    width: 100%;
+    margin-top: 5vh;
+    margin-left: -30vw;
+  }
+
+  .nav-actions-right {
+    margin-top: -25vh;
+    margin-left: -10vw;
+    width: 100%;
+    justify-content: flex-end;
+    position: absolute;
+  }
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    margin-left: 85vw;
+    margin-top: 3.5vh;
+  }
+ .nav-closed {
+  max-height: 0;          /* Oculto */
+  overflow: hidden;       /* Esconde contenido */
+  transition: max-height 0.4s ease-out;
+}
+.nav-closed .nav-actions-right {
+  display: none;   /* Oculta cuando el menú está cerrado */
+}
+
+.nav-open {
+  max-height: 30vh;       /* Altura del menú */
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+}
+
+.head-open{
+  background-color: #1e293b;
+}
+
+.head-closed.scrolled{
+  background-color: #1e293b;
+}
+
+}

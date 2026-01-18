@@ -1,0 +1,783 @@
+
+.primario{
+    background-image: url(../../../public/IMG/eed08d97e1cc46d475cac77b3ab658f4.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.3);
+    background-blend-mode: darken;
+    display: flex;
+    flex-direction: column;
+    background-attachment: fixed;
+}
+
+.content-primario{
+    display: flex;
+    margin-top: 50vh;
+    flex-wrap: wrap;
+}
+
+.section-dark {
+  height: 100vh;
+  background-color: #0f172a; /* fondo oscuro */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.hero-main-title {
+  text-align: center;
+  padding: 40px 20px;
+  position: absolute;
+
+
+}
+
+.gradient-text {
+  /* Este bloque crea el efecto de texto transparente con fondo degradado */
+  background: linear-gradient(to right, #4ade80, #10b981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent; /* Fallback */ 
+  padding-left: 40px;
+}
+
+.hero-cta-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 206px;
+  margin-left: 5vw;
+  flex-wrap: wrap; /* Para que en celulares se pongan uno debajo del otro */
+}
+
+/* Estilo Base para ambos botones */
+.btn-primary, .btn-secondary {
+  padding: 16px 32px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  min-width: 220px;
+}
+
+/* Botón Principal: Nómada Digital */
+.btn-primary {
+  background: linear-gradient(135deg, #4ade80, #10b981);
+  color: #064e3b;
+  box-shadow: 0 10px 15px -3px rgba(74, 222, 128, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 25px -5px rgba(74, 222, 128, 0.4);
+  filter: brightness(1.1);
+}
+
+/* Botón Secundario: Quiero ser un Nodo */
+.btn-secondary {
+  background-color: transparent;
+  color: #f8fafc;
+  border: 2px solid #334155;
+}
+
+.btn-secondary:hover {
+  background-color: #1e293b;
+  border-color: #94a3b8;
+  transform: translateY(-3px);
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 640px) {
+
+  .primario{
+    height: 160vh;
+    margin-bottom: 174vh;
+  }
+  .hero-cta-container {
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 55vh;
+    margin-left: 16vw;
+  }
+  
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+
+.split-section {
+  display: flex;
+  height: 100vh; /* Ocupa casi toda la pantalla para que sea impactante */
+  min-height: 500px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.split-panel {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 60px;
+  
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: translateY(50px); /* desplazado hacia abajo */
+  
+  transition: 
+    flex 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+.split-panel.visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Imagen de fondo para cada uno (pon urls de fotos reales de Miraflores) */
+.nomada-panel {
+  background-image: url('foto-programador-campo.jpg');
+  background-color: #1a1a1a; 
+}
+
+.nodo-panel {
+  background-image: url('foto-finca-boyaca.jpg');
+  background-color: #242424;
+}
+
+/* Efecto de oscurecimiento para que el texto se lea bien */
+.overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(15, 23, 42, 0.75); /* Slate-900 con transparencia */
+  transition: background 0.3s;
+}
+
+.panel-content {
+  position: relative;
+  z-index: 2;
+  max-width: 400px;
+}
+
+.panel-tag {
+  color: #4ade80;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.panel-content h2 {
+  color: white;
+  font-size: 2.2rem;
+  margin: 15px 0;
+}
+
+.panel-content p {
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.panel-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  color: #4ade80;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* EFECTO INTERACTIVO: El lado que señalas se ensancha sutilmente */
+.split-panel:hover {
+  flex: 1.2;
+}
+
+.split-panel:hover .overlay {
+  background: rgba(15, 23, 42, 0.6);
+}
+
+/* Ajuste móvil: Uno arriba del otro */
+@media (max-width: 768px) {
+  .split-section {
+    flex-direction: column;
+    height: auto;
+    margin-bottom: 330vh;
+  }
+
+  .split-panel {
+    padding: 40px 20px;
+  }
+  .panel-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .panel-content h2{
+    text-align: center;
+  }
+}
+
+.btn-learn-more {
+  background: transparent;
+  border: none;
+  color: #fcfdfd; /* Tu verde marca */
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  margin-top: 20px;
+}
+
+.btn-learn-more span {
+  transition: transform 0.3s ease;
+}
+
+/* Efecto de línea sutil abajo que crece */
+.btn-learn-more::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color:white;
+  transition: width 0.3s ease;
+}
+
+/* HOVER ANIMATION */
+.btn-learn-more:hover {
+  color: #4ade80;
+}
+
+.btn-learn-more:hover span {
+  transform: translateX(5px); /* La flecha se mueve a la derecha */
+}
+
+.btn-learn-more:hover::after {
+  width: 100%; /* La línea se expande */
+  background-color: #4ade80;
+}
+
+.btn-learn-more:active {
+  transform: scale(0.98);
+}
+
+
+/*------------------------------------*/
+
+.panorama-section {
+  height: 100vh; /* Ocupa toda la pantalla */
+  width: 100%;
+  background-image: url('../../../public/IMG/IMG_20250801_184124454.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Efecto Parallax: la foto se queda fija */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Oscurecemos la foto un poco para que el texto resalte, pero que se vea el color */
+.panorama-overlay {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom, 
+    rgba(15, 23, 42, 0.8), /* Se une con la sección oscura de arriba */
+    rgba(15, 23, 42, 0.2), /* Se aclara en el medio para ver la foto */
+    rgba(15, 23, 42, 0.8)  /* Se oscurece para la sección de abajo */
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panorama-card {
+  background: rgba(255, 255, 255, 0.05); /* Efecto cristal (Glassmorphism) */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 50px;
+  border-radius: 30px;
+  max-width: 600px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);opacity: 0;
+  transform: translateY(50px); /* desplazado hacia abajo */
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.panorama-card.visible {
+  height: 65vh;
+  opacity: 1;
+  transform: translateY(0); /* posición normal */
+}
+
+.rutas-grid {
+  display: grid; /* activar grid */
+  grid-template-columns: 1fr; /* una sola columna */
+  margin-top: 30px;
+  gap: 20px;
+}
+
+
+.ruta-item {
+  display: flex;
+  background: #f8fafc;
+  width: 20vw;
+  padding: 25px;
+  border-radius: 20px;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s;
+}
+
+.ruta-item:hover {
+  background: #ffffff;
+  border-color: #2563eb;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.1);
+}
+
+.ruta-info h4 { color: #0f172a; margin: 0; }
+.ruta-info span { color: #64748b; font-size: 0.9rem; }
+.ruta-icon { color: #2563eb; font-weight: bold; font-size: 0.9rem; }
+
+@media (max-width: 768px) {
+  .rutas-grid { grid-template-columns: 1fr; }
+  .panorama-card.visible{
+    height: 102vh;
+    margin-top: 30vh;
+  }
+  .panorama-section{
+    gap: 30vh;
+  }
+  .ruta-item{
+    width: 50vw;
+    margin-top:10vh;}
+
+
+}
+
+
+.card-badge {
+  color: #4ade80;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
+
+.panorama-card h2 {
+  font-size: 3rem;
+  margin: 20px 0;
+}
+
+.panorama-card p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+}
+
+.panorama-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+}
+
+.panorama-stats div strong {
+  display: block;
+  font-size: 1.5rem;
+  color: #4ade80;
+}
+
+.panorama-stats div span {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+
+
+
+.section-stack {
+  height: 150vh;
+  background-color: #0f172a; /* fondo oscuro */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stack-header {
+  text-align: left;
+  margin-bottom: 60px;
+}
+
+.stack-tag {
+  color: #4ade80;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  border-left: 3px solid #4ade80;
+  padding-left: 10px;
+}
+
+.stack-header h2 {
+  color: white;
+  font-size: 2.5rem;
+  margin-top: 20px;
+}
+
+.stack-header p {
+  color: #94a3b8;
+  max-width: 600px;
+  margin-top: 15px;
+}
+
+/* GRID */
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.stack-item {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+  background: linear-gradient(145deg, #1e293b, #0f172a);
+  border-radius: 20px;
+  border: 1px solid #334155;
+  opacity: 0;
+  transform: translateY(50px); /* desplazado hacia abajo */
+  transition: opacity 0.8s ease, transform 0.8s ease;
+
+}
+.stack-item.visible{
+   opacity: 1;
+  transform: translateY(0);
+}
+
+.stack-item:hover {
+  border-color: #4ade80;
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(74, 222, 128, 0.1);
+}
+
+.stack-icon {
+  font-size: 2rem;
+  background: rgba(74, 222, 128, 0.1);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.stack-info h3 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.stack-info p {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.spec {
+  display: inline-block;
+  background: #1e293b;
+  color: #4ade80;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: 1px solid rgba(74, 222, 128, 0.2);
+}
+
+
+.social-impact {
+  padding: 120px 5%;
+  background-color: #f8f6dd; /* Color muy claro (Slate 50) */
+  display: flex;
+  justify-content: center;
+}
+
+.impact-container {
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.impact-image {
+  position: relative;
+  transform: translateY(50px); /* desplazado hacia abajo */
+  transition: opacity 0.8s ease, transform 0.8s ease;
+
+}
+.impact-image.visible{
+   opacity: 1;
+  transform: translateY(0);
+}
+.impact-image img {
+  width: 100%;
+  border-radius: 30px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.impact-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: #4ade80;
+  color: #064e3b;
+  padding: 15px 25px;
+  border-radius: 15px;
+  font-weight: 800;
+  box-shadow: 0 10px 20px rgba(74, 222, 128, 0.3);
+}
+
+.impact-tag {
+  color: #10b981;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+.impact-text{
+  transform: translateY(50px); /* desplazado hacia abajo */
+  transition: opacity 0.8s ease, transform 0.8s ease;
+
+}
+.impact-text.visible{
+   opacity: 1;
+  transform: translateY(0);
+}
+
+
+.impact-text h2 {
+  color: #0f172a; /* Texto oscuro para contraste */
+  font-size: 2.8rem;
+  margin: 20px 0;
+  line-height: 1.1;
+}
+
+.impact-text p {
+  color: #475569;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.impact-steps {
+  margin-top: 40px;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.step-num {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  font-weight: 800;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+}
+
+.step p {
+  font-size: 1rem;
+  margin: 0;
+  color: #1e293b;
+}
+
+/* Responsivo para móviles */
+@media (max-width: 850px) {
+  .impact-container {
+    grid-template-columns: 1fr;
+  }
+  .impact-image {
+    order: 2;
+  }
+  .panorama-section{
+    margin-bottom: 200vh;
+    flex-direction: column;
+    margin-bottom:240vh ;
+  }
+  #sss{
+    height: 200vh;
+  }
+  .section-stack{
+    margin-bottom: 100vh;
+  }
+  .stack-item{
+    width: 80vw;
+    margin-left: 3vw;
+  }
+  .stack-header {
+    margin-left: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+.team-section {
+  height: 100%;
+  /* Imagen de fondo de todo el equipo */
+  background-image: url('../../../public/IMG/IMG_20260101_184140520.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Opcional: para efecto parallax */
+  position: relative;
+}
+
+.team-background-overlay {
+  height: 100%;
+  padding: 100px 5%;
+  /* Oscurecemos la imagen para que el texto resalte */
+  background: linear-gradient(
+    rgba(15, 23, 42, 0.85), 
+    rgba(15, 23, 42, 0.7), 
+    rgba(15, 23, 42, 0.85)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-container {
+  max-width: 1100px;
+  width: 100%;
+  text-align: center;
+}
+
+.team-header {
+  margin-bottom: 60px;
+}
+
+.team-tag {
+  color: #4ade80;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+.team-header h2 {
+  color: white;
+  font-size: 3rem;
+  margin: 15px 0;
+}
+
+.team-header p {
+  color: #cbd5e1;
+  font-size: 1.1rem;
+}
+
+/* GRID DE TARJETAS */
+.team-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.team-card {
+  background: rgba(255, 255, 255, 0.03); /* Fondo casi invisible */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 30px;
+  flex: 1;
+  max-width: 300px;
+  transform: translateY(50px); /* desplazado hacia abajo */
+  transition: opacity 0.8s ease, transform 0.8s ease;
+
+}
+.team-card.visible{
+   opacity: 1;
+  transform: translateY(0);
+}
+.team-card:hover {
+  transform: translateY(-10px);
+  border-color: #4ade80;
+}
+
+.member-info h3 {
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+.member-role {
+  color: #4ade80;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.member-info p {
+  color: #94a3b8;
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.member-badge {
+  display: inline-block;
+  background: rgba(74, 222, 128, 0.15);
+  color: #4ade80;
+  padding: 6px 15px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+.team-vision {
+  margin-top: 60px;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 850px) {
+  .team-card{
+    max-width: 200px;
+  }
+}
