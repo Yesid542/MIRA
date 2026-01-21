@@ -21,6 +21,7 @@ body{
   text-decoration: none;
   color: #59c439;
   font-weight: 600;
+  margin-left: -25vw;
 }
 
 .ayuda-logo {
@@ -85,4 +86,10 @@ body{
 @media (max-width: 600px) {
   .impact-grid { grid-template-columns: 1fr; }
   .ayuda-hero h1 { font-size: 2rem; }
+  .back-btn{
+    display: none;
+  }
+  .ayuda-logo{
+    margin-left: 5vw;
+  }
 }
