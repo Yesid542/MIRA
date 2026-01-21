@@ -18,7 +18,7 @@ function RegistroNomada (){
     
     // Enviamos los datos a la tabla 'nomadas' de Supabase
     const { data, error } = await supabase
-      .from('Nomadas')
+      .from('nomadas')
       .insert([
         { 
           nombre: formData.full_name, 

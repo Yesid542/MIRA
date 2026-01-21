@@ -9,7 +9,7 @@ function RegistroNodo (){
    const [formData, setFormData] = useState({
       full_name: '',
       place_name: '',
-      capacity: 'one'
+      capacity: 1
     });
   
     const handleSubmit = async (e) => {
@@ -17,11 +17,11 @@ function RegistroNodo (){
       
       // Enviamos los datos a la tabla 'nomadas' de Supabase
       const { data, error } = await supabase
-        .from('Nodo')
+        .from('nodos')
         .insert([
           { 
             nombre: formData.full_name, 
-            ubicacion: formData.place_name, 
+            ubicacion_link: formData.place_name, 
             capacidad: formData.capacity 
           }
         ]);
@@ -62,9 +62,9 @@ function RegistroNodo (){
             <div className="host-input-group">
               <label>Capacidad de Huéspedes</label>
               <select value={formData.capacity} onChange={(e) => setFormData({...formData,  capacity: e.target.value })}>
-                <option value={"one"}>1 Nómada</option>
-                <option value={"Two"}>2 Nómadas</option>
-                <option value={"Three"}>Grupo pequeño (3-5)</option>
+                <option value={1}>1 Nómada</option>
+                <option value={2}>2 Nómadas</option>
+                <option value={3}>Grupo pequeño (3-5)</option>
               </select>
             </div>
 
