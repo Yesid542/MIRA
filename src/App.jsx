@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import './App.css'
 import Header from './components/Header/header';
 import Principal from './components/Principal/principal';
@@ -31,6 +32,7 @@ function App() {
         <Route path="/registroNodo" element={<RegistroNodo/>} />
         <Route path="/ayuda" element={<Ayuda/>} />
       </Routes>
+      <Analytics />
    </BrowserRouter> 
   );
 }
