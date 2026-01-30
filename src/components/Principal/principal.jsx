@@ -5,6 +5,7 @@ import './principal.css'
 import LandingHeader from '../Header/header'
 import LandingFooter from '../Footer/footer'
 import { Link } from "react-router-dom";
+import { Analytics } from '@vercel/analytics/next';
 
 function Principal (){
 
@@ -322,6 +323,7 @@ function Principal (){
             </div>
           </div>
         </section>  
+        <Analytics />
 
         <LandingFooter/>
         </>
