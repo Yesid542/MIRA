@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { inject } from '@vercel/analytics';
 import './App.css'
 import Header from './components/Header/header';
 import Principal from './components/Principal/principal';
@@ -9,6 +10,9 @@ import Ayuda from './components/help/help';
 
 function App() {
   useEffect(() => {
+    // Initialize Vercel Analytics
+    inject();
+    
     let scrollTimeout;
 
     const handleScroll = () => {
